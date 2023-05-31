@@ -119,9 +119,9 @@ export default function Home() {
                 improving old ones
               </li>
               <li>
-                - I am looking to become a part of a friendly and professional
-                team where I can develop my React, Next.js development skills to
-                achieve team results.
+                - I am looking for an opportunity to become a part of a friendly
+                and professional team where I can develop my development skills
+                to achieve team results.
               </li>
             </ul>
           </div>
