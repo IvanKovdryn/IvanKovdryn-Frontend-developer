@@ -1,113 +1,194 @@
-import Image from 'next/image'
+import Image from "next/image";
+import Link from "next/link";
+import { BsTelephoneFill, BsGithub, BsInstagram } from "react-icons/bs";
+import { IoMdMail } from "react-icons/io";
+import { FaTelegramPlane, FaFacebookF } from "react-icons/fa";
+import styles from "./Global.module.css";
 
 export default function Home() {
+  const contacts = [
+    {
+      link: "https://www.instagram.com/ivan.kovdryn/",
+      icon: <BsInstagram className={styles.icon} />,
+      name: "Instagram",
+    },
+    {
+      link: "https://www.facebook.com/profile.php?id=100019765590610",
+      icon: <FaFacebookF className={styles.icon} />,
+      name: "Facebook",
+    },
+    {
+      link: "https://github.com/IvanKovdryn",
+      icon: <BsGithub className={styles.icon} />,
+      name: "GitHub",
+    },
+    {
+      link: "https://web.telegram.org/k/#882122315",
+      icon: <FaTelegramPlane className={styles.icon} />,
+      name: "Telegram",
+    },
+    {
+      link: "https://mail.google.com/mail/u/1/#inbox",
+      icon: <IoMdMail className={styles.icon} />,
+      name: "ivankovdrin@gmail.com",
+    },
+    {
+      link: "tel:+380967135003",
+      icon: <BsTelephoneFill className={styles.icon} />,
+      name: "+380 96 713 50 03",
+    },
+  ];
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
+    <div className="mx-auto max-w-[1240px] py-[20px] px-[15px] sm:px-[20px]">
+      <main className={styles.main}>
+        <div className="flex flex-col gap-[20px] sm:gap-[25px]">
+          <div>
             <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
+              src="/image-m.jpg"
+              alt="img"
+              width={480}
+              height={640}
               priority
+              className="w-[75px] h-[75px] sm:w-[115px] sm:h-[115px] md:w-[150px] md:h-[150px] lg:w-[175px] lg:h-[175px] object-cover object-top rounded-full"
             />
-          </a>
+            <p className="text-xl sm:text-2xl xl:text-3xl xl:mb-0 font-bold mt-[5px] mb-[3px]">
+              Ivan Kovdryn
+            </p>
+            <p>I'm 22</p>
+            <p className="text-sm sm:text-base lg:text-lg xl:text-xl font-bold text-blue-300">
+              Front-end (React, Next.js) developer
+            </p>
+          </div>
+          <div>
+            <div className={styles.title}>Skills</div>
+            <span className={styles.line}></span>
+            <ul>
+              <li>- &nbsp; HTML5, CSS3, SASS/SCSS, Tailwind CSS</li>
+              <li>- &nbsp; JavaScript</li>
+              <li>- &nbsp; React</li>
+              <li>- &nbsp; Next.js</li>
+              <li>- &nbsp; Redux Toolkit</li>
+              <li>- &nbsp; TypeScript</li>
+              <li>- &nbsp; EJS</li>
+              <li>- &nbsp; Node.js</li>
+              <li>- &nbsp; Express.js</li>
+              <li>- &nbsp; Git</li>
+              <li>- &nbsp; Docker</li>
+              <li>- &nbsp; MongoDB</li>
+            </ul>
+          </div>
+          <div>
+            <div className={styles.title}>Contact info:</div>
+            <span className={styles.line}></span>
+            <ul className="flex flex-col">
+              {contacts.map((contact) => (
+                <Link
+                  key={contact.name}
+                  className="ml-[-2px] w-fit p-[2px] transition-all text-blue-200 hover:text-blue-400 flex gap-[15px] items-center"
+                  href={`${contact.name}`}
+                >
+                  <span>{contact.icon}</span>
+                  {contact.name}
+                </Link>
+              ))}
+            </ul>
+          </div>
         </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+        <div className="flex flex-col gap-[25px] sm:gap-[30px]">
+          <div>
+            <div className={styles.title}>About me</div>
+            <span className={styles.line}></span>
+            <ul>
+              <li>
+                - Front end developer with experience in creating SPA using
+                React, Next js
+              </li>
+              <li>- Knowledge of user interface and debugging processes</li>
+              <li>
+                - I usually spend my free time learning new technologies and
+                improving old ones
+              </li>
+              <li>
+                - I am looking to become a part of a friendly and professional
+                team where I can develop my React.js, Next.js development skills
+                to achieve team results.
+              </li>
+            </ul>
+          </div>
+          <div>
+            <div className={styles.title}>Project experience</div>
+            <span className={styles.line}></span>
+            <div className="flex flex-col gap-[15px]">
+              <div>
+                <p>&nbsp;-&nbsp; Corporate website with admin panel</p>
+                <Link
+                  className="ml-[-2px] w-fit p-[2px] transition-all text-blue-200 hover:text-blue-400"
+                  href="http://vanyaaa.cloud/"
+                >
+                  http://vanyaaa.cloud/
+                </Link>
+                <p className="text-xs sm:text-sm">
+                  HTML5, CSS3, SASS/SCSS, JavaScript, EJS, Node.js, Express.js,
+                  Docker, MongoDB, Git...
+                </p>
+              </div>
+              <div>
+                <p>&nbsp;-&nbsp; Online shop</p>
+                <Link
+                  className="ml-[-2px] w-fit p-[2px] transition-all text-blue-200 hover:text-blue-400"
+                  href="https://nextjs-app-shop.vercel.app/"
+                >
+                  https://nextjs-app-shop.vercel.app/
+                </Link>
+                <p className="text-sm">
+                  Next.js, React, CSS, SCSS, Tailwind CSS, Redux Toolkit, Axios,
+                  Custom API, Git...
+                </p>
+              </div>
+              <div>
+                <p>
+                  &nbsp;-&nbsp; Other projects on React, Next.js, JavaScript
+                </p>
+                <Link
+                  className="ml-[-2px] w-fit p-[2px] transition-all text-blue-200 hover:text-blue-400"
+                  href="https://github.com/IvanKovdryn?tab=repositories"
+                >
+                  https://github.com/IvanKovdryn?tab=repositories
+                </Link>
+              </div>
+              <div>
+                <p>&nbsp;-&nbsp; Website layouts, also on GitHub</p>
+                <Link
+                  className="ml-[-2px] w-fit p-[2px] transition-all text-blue-200 hover:text-blue-400"
+                  href="https://github.com/IvanKovdryn?tab=repositories"
+                >
+                  https://github.com/IvanKovdryn?tab=repositories
+                </Link>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div className={styles.title}>Academic background</div>
+            <span className={styles.line}></span>
+            <div className="flex flex-col gap-[15px]">
+              <div>
+                <p>
+                  - I am studying for a master's degree at the Law Institute of
+                  Vasyl Stefanyk Precarpathian National University
+                </p>
+                <span className="text-gray-300">Ivano-Frankivsk</span>
+              </div>
+              <div>
+                <p>
+                  - Bachelor's degree at the Faculty of Physical Education and
+                  Sports Vasyl Stefanyk Precarpathian National University
+                </p>
+                <span className="text-gray-300">Ivano-Frankivsk</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  );
 }
