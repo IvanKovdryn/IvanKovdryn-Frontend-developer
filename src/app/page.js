@@ -85,7 +85,7 @@ export default function Home() {
                 <Link
                   key={contact.name}
                   className="ml-[-2px] w-fit p-[2px] transition-all text-blue-200 hover:text-blue-400 flex gap-[15px] items-center"
-                  href={`${contact.name}`}
+                  href={`${contact.link}`}
                 >
                   <span>{contact.icon}</span>
                   {contact.name}
