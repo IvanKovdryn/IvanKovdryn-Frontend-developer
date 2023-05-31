@@ -23,9 +23,9 @@ export default function Home() {
       name: "GitHub",
     },
     {
-      link: "https://t.me/",
+      link: "https://t.me/ivan_kovdryn",
       icon: <FaTelegramPlane className={styles.icon} />,
-      name: "Telegram",
+      name: "@ivan_kovdryn",
     },
     {
       link: "https://mail.google.com/mail/u/1/#inbox",
