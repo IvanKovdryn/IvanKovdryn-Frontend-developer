@@ -23,7 +23,7 @@ export default function Home() {
       name: "GitHub",
     },
     {
-      link: "https://web.telegram.org/k/#882122315",
+      link: "https://t.me/",
       icon: <FaTelegramPlane className={styles.icon} />,
       name: "Telegram",
     },
@@ -81,16 +81,26 @@ export default function Home() {
             <div className={styles.title}>Contact info:</div>
             <span className={styles.line}></span>
             <ul className="flex flex-col">
-              {contacts.map((contact) => (
-                <Link
-                  key={contact.name}
-                  className="ml-[-2px] w-fit p-[2px] transition-all text-blue-200 hover:text-blue-400 flex gap-[15px] items-center"
-                  href={`${contact.link}`}
-                >
-                  <span>{contact.icon}</span>
-                  {contact.name}
-                </Link>
-              ))}
+              {contacts.map((contact) =>
+                contact.name === "+380 96 713 50 03" ? (
+                  <a
+                    className="ml-[-2px] w-fit p-[2px] transition-all text-blue-200 hover:text-blue-400 flex gap-[15px] items-center"
+                    href="tel:+380967135003"
+                  >
+                    <span>{contact.icon}</span>
+                    +380 96 713 50 03
+                  </a>
+                ) : (
+                  <Link
+                    key={contact.name}
+                    className="ml-[-2px] w-fit p-[2px] transition-all text-blue-200 hover:text-blue-400 flex gap-[15px] items-center"
+                    href={`${contact.link}`}
+                  >
+                    <span>{contact.icon}</span>
+                    {contact.name}
+                  </Link>
+                )
+              )}
             </ul>
           </div>
         </div>
