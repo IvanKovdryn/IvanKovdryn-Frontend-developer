@@ -110,8 +110,8 @@ export default function Home() {
             <span className={styles.line}></span>
             <ul>
               <li>
-                - Front end developer with experience in creating SPA using
-                React, Next js
+                - Mainly Front end developer with experience in creating SPA
+                using React, Next js
               </li>
               <li>- Knowledge of user interface and debugging processes</li>
               <li>
@@ -120,8 +120,8 @@ export default function Home() {
               </li>
               <li>
                 - I am looking to become a part of a friendly and professional
-                team where I can develop my React.js, Next.js development skills
-                to achieve team results.
+                team where I can develop my React, Next.js development skills to
+                achieve team results.
               </li>
             </ul>
           </div>
