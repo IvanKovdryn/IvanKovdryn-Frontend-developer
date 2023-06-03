@@ -1,7 +1,8 @@
 .main {
   display: grid;
   gap: 15px;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 2fr 1fr;
+  align-items: center;
 }
 .title {
   font-size: 24px;
@@ -19,9 +20,20 @@
 .icon {
   font-size: 20px;
 }
+.leftcol {
+  padding: 20px;
+  min-height: 100vh;
+}
+.leftcolbg {
+  background: rgb(39 39 42);
+  z-index: -10;
+}
+.rightcol {
+  color: #000;
+  padding: 20px;
+}
 @media (max-width: 1280px) {
   .main {
-    grid-template-columns: 1fr 1.5fr;
     font-size: 15px;
   }
   .title {
@@ -52,6 +64,7 @@
 @media (max-width: 640px) {
   .main {
     font-size: 13px;
+    grid-template-columns: 1.5fr 1fr;
   }
   .title {
     font-size: 16px;
@@ -64,11 +77,47 @@
   .main {
     grid-template-columns: 1fr;
     font-size: 12px;
+    gap: 0;
+  }
+  .leftcol {
+    min-height: auto;
+  }
+  .leftcolbg {
+    background: rgb(39 39 42);
+    z-index: -10;
+  }
+  .rightcol {
+    min-height: auto;
+    align-items: end;
+    text-align: end;
+  }
+  .skillswrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+  }
+  .skillsli {
+    display: flex;
+    gap: 8px;
+    flex-direction: row-reverse;
   }
   .title {
     font-size: 14px;
   }
   .icon {
     font-size: 14px;
+  }
+  .contactwrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+  }
+  .contactlist {
+    align-items: end;
+    padding-right: 5px;
+  }
+  .contactli {
+    display: flex;
+    flex-direction: row-reverse;
   }
 }

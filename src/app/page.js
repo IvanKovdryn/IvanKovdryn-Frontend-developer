@@ -1,12 +1,22 @@
 import Image from "next/image";
 import Link from "next/link";
-import { BsTelephoneFill, BsGithub, BsInstagram } from "react-icons/bs";
+import {
+  BsTelephoneFill,
+  BsGithub,
+  BsInstagram,
+  BsLinkedin,
+} from "react-icons/bs";
 import { IoMdMail } from "react-icons/io";
 import { FaTelegramPlane, FaFacebookF } from "react-icons/fa";
 import styles from "./Global.module.css";
 
 export default function Home() {
   const contacts = [
+    {
+      link: "https://www.linkedin.com/in/ivan-kovdryn-b22425279/",
+      icon: <BsLinkedin className={styles.icon} />,
+      name: "LinkedIn",
+    },
     {
       link: "https://www.instagram.com/ivan.kovdryn/",
       icon: <BsInstagram className={styles.icon} />,
@@ -39,92 +49,35 @@ export default function Home() {
     },
   ];
   return (
-    <div className="mx-auto max-w-[1240px] py-[20px] px-[15px] sm:px-[20px]">
+    <div className="mx-auto max-w-[1240px]">
       <main className={styles.main}>
-        <div className="flex flex-col gap-[20px] sm:gap-[25px]">
-          <div>
+        <div
+          className={`${styles.leftcol} relative flex flex-col justify-center gap-[20px] sm:gap-[25px] min-h-[100vh]`}
+        >
+          <div
+            className={`${styles.leftcolbg} absolute right-0 top-0 w-[1500px] h-full`}
+          ></div>
+          <div className="flex items-center gap-[20px]">
             <Image
-              src="/image-m.jpg"
+              src="/image-m2.jpg"
               alt="img"
               width={480}
               height={640}
               priority
-              className="w-[75px] h-[75px] sm:w-[115px] sm:h-[115px] md:w-[150px] md:h-[150px] lg:w-[175px] lg:h-[175px] object-cover object-top rounded-full"
+              className="w-[75px] scale h-[75px] sm:w-[115px] sm:h-[115px] md:w-[150px] md:h-[150px] lg:w-[175px] lg:h-[175px] object-cover object-top rounded-full"
             />
-            <p className="text-xl sm:text-2xl xl:text-3xl xl:mb-0 font-bold mt-[5px] mb-[3px]">
-              Ivan Kovdryn
-            </p>
-            <p>I'm 22</p>
-            <p className="text-sm sm:text-base lg:text-lg xl:text-xl font-bold text-blue-300">
-              Front-end (React, Next.js) developer
-            </p>
+            <div>
+              <p className="text-xl sm:text-2xl xl:text-3xl xl:mb-[8px] font-bold mt-[5px] mb-[4px]">
+                Ivan Kovdryn
+              </p>
+              <p>English level: Pre-Intermediate</p>
+              <p>Living in Ivano-Frankivsk, Ukraine</p>
+              <p>22 y.o.</p>
+            </div>
           </div>
-          <div>
-            <div className={styles.title}>Skills</div>
-            <span className={styles.line}></span>
-            <ul>
-              <li>- &nbsp; HTML5, CSS3, SASS/SCSS, Tailwind CSS</li>
-              <li>- &nbsp; JavaScript</li>
-              <li>- &nbsp; React</li>
-              <li>- &nbsp; Next.js</li>
-              <li>- &nbsp; Redux Toolkit</li>
-              <li>- &nbsp; TypeScript</li>
-              <li>- &nbsp; EJS</li>
-              <li>- &nbsp; Node.js</li>
-              <li>- &nbsp; Express.js</li>
-              <li>- &nbsp; Git</li>
-              <li>- &nbsp; Docker</li>
-              <li>- &nbsp; MongoDB</li>
-            </ul>
-          </div>
-          <div>
-            <div className={styles.title}>Contact info:</div>
-            <span className={styles.line}></span>
-            <ul className="flex flex-col">
-              {contacts.map((contact) =>
-                contact.name === "+380 96 713 50 03" ? (
-                  <a
-                    className="ml-[-2px] w-fit p-[2px] transition-all text-blue-200 hover:text-blue-400 flex gap-[15px] items-center"
-                    href="tel:+380967135003"
-                  >
-                    <span>{contact.icon}</span>
-                    +380 96 713 50 03
-                  </a>
-                ) : (
-                  <Link
-                    key={contact.name}
-                    className="ml-[-2px] w-fit p-[2px] transition-all text-blue-200 hover:text-blue-400 flex gap-[15px] items-center"
-                    href={`${contact.link}`}
-                  >
-                    <span>{contact.icon}</span>
-                    {contact.name}
-                  </Link>
-                )
-              )}
-            </ul>
-          </div>
-        </div>
-        <div className="flex flex-col gap-[25px] sm:gap-[30px]">
-          <div>
-            <div className={styles.title}>About me</div>
-            <span className={styles.line}></span>
-            <ul>
-              <li>
-                - Mainly Front end developer with experience in creating SPA
-                using React, Next js
-              </li>
-              <li>- Knowledge of user interface and debugging processes</li>
-              <li>
-                - I usually spend my free time learning new technologies and
-                improving old ones
-              </li>
-              <li>
-                - I am looking for an opportunity to become a part of a friendly
-                and professional team where I can develop my development skills
-                to achieve team results.
-              </li>
-            </ul>
-          </div>
+          <p className="text-md sm:text-lg self-center md:text-xl xl:text-2xl text-center font-bold text-blue-300">
+            Full Stack (React, Node.js) developer
+          </p>
           <div>
             <div className={styles.title}>Project experience</div>
             <span className={styles.line}></span>
@@ -196,6 +149,78 @@ export default function Home() {
                 <span className="text-gray-300">Ivano-Frankivsk</span>
               </div>
             </div>
+          </div>
+        </div>
+        <div
+          className={`${styles.rightcol} flex flex-col justify-center min-h-[100vh] gap-[25px] sm:gap-[30px]`}
+        >
+          <div className={styles.skillswrapper}>
+            <div className={styles.title}>Skills</div>
+            <span className={styles.line}></span>
+            <ul>
+              <li className={styles.skillsli}>
+                <span>-</span> &nbsp; React
+              </li>
+              <li className={styles.skillsli}>
+                <span>-</span> &nbsp; Next.js
+              </li>
+              <li className={styles.skillsli}>
+                <span>-</span> &nbsp; JavaScript
+              </li>
+              <li className={styles.skillsli}>
+                <span>-</span> &nbsp; Redux Toolkit
+              </li>
+              <li className={styles.skillsli}>
+                <span>-</span> &nbsp; TypeScript
+              </li>
+              <li className={styles.skillsli}>
+                <span>-</span> &nbsp; Node.js
+              </li>
+              <li className={styles.skillsli}>
+                <span>-</span> &nbsp; Express.js
+              </li>
+              <li className={styles.skillsli}>
+                <span>-</span> &nbsp; EJS
+              </li>
+              <li className={styles.skillsli}>
+                <span>-</span> &nbsp; Git
+              </li>
+              <li className={styles.skillsli}>
+                <span>-</span> &nbsp; MongoDB
+              </li>
+              <li className={styles.skillsli}>
+                <span>-</span> &nbsp; Docker
+              </li>
+              <li className={styles.skillsli}>
+                <span>-</span> &nbsp; HTML5, CSS3, SASS/SCSS, Tailwind CSS
+              </li>
+            </ul>
+          </div>
+          <div className={styles.contactwrapper}>
+            <div className={styles.title}>Contact info</div>
+            <span className={styles.line}></span>
+            <ul className={`${styles.contactlist} flex flex-col`}>
+              {contacts.map((contact) =>
+                contact.name === "+380 96 713 50 03" ? (
+                  <a
+                    className={`${styles.contactli} l-[-2px] w-fit p-[2px] transition-all text-dark hover:text-blue-700 flex gap-[15px] items-center`}
+                    href="tel:+380967135003"
+                  >
+                    <span>{contact.icon}</span>
+                    +380 96 713 50 03
+                  </a>
+                ) : (
+                  <Link
+                    key={contact.name}
+                    className={`${styles.contactli} ml-[-2px] w-fit p-[2px] transition-all text-dark hover:text-blue-700 flex gap-[15px] items-center`}
+                    href={`${contact.link}`}
+                  >
+                    <span>{contact.icon}</span>
+                    {contact.name}
+                  </Link>
+                )
+              )}
+            </ul>
           </div>
         </div>
       </main>
