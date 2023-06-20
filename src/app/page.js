@@ -165,13 +165,16 @@ export default function Home() {
                 <span>-</span> &nbsp; Next.js
               </li>
               <li className={styles.skillsli}>
+                <span>-</span> &nbsp; React Native
+              </li>
+              <li className={styles.skillsli}>
                 <span>-</span> &nbsp; JavaScript
               </li>
               <li className={styles.skillsli}>
-                <span>-</span> &nbsp; Redux Toolkit
+                <span>-</span> &nbsp; TypeScript
               </li>
               <li className={styles.skillsli}>
-                <span>-</span> &nbsp; TypeScript
+                <span>-</span> &nbsp; Redux Toolkit
               </li>
               <li className={styles.skillsli}>
                 <span>-</span> &nbsp; Node.js
