@@ -165,7 +165,7 @@ export default function Home() {
                 <span>-</span> &nbsp; Next.js
               </li>
               <li className={styles.skillsli}>
-                <span>-</span> &nbsp; React Native
+                <span>-</span> &nbsp; React Native, Expo
               </li>
               <li className={styles.skillsli}>
                 <span>-</span> &nbsp; JavaScript
