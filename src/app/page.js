@@ -18,16 +18,6 @@ export default function Home() {
       name: "LinkedIn",
     },
     {
-      link: "https://www.instagram.com/ivan.kovdryn/",
-      icon: <BsInstagram className={styles.icon} />,
-      name: "Instagram",
-    },
-    {
-      link: "https://www.facebook.com/profile.php?id=100019765590610",
-      icon: <FaFacebookF className={styles.icon} />,
-      name: "Facebook",
-    },
-    {
       link: "https://github.com/IvanKovdryn",
       icon: <BsGithub className={styles.icon} />,
       name: "GitHub",
@@ -57,17 +47,17 @@ export default function Home() {
           <div
             className={`${styles.leftcolbg} absolute right-0 top-0 w-[1500px] h-full`}
           ></div>
-          <div className="flex items-center gap-[20px]">
+          <div className={`${styles.header} flex items-center gap-[20px]`}>
             <Image
-              src="/image-m2.jpg"
+              src="/img.jpg"
               alt="img"
               width={480}
               height={640}
               priority
-              className="w-[75px] scale h-[75px] sm:w-[115px] sm:h-[115px] md:w-[150px] md:h-[150px] lg:w-[175px] lg:h-[175px] object-cover object-top rounded-full"
+              className="w-[75px] scale h-[75px] sm:w-[105px] sm:h-[105px] md:w-[125px] md:h-[125px] lg:w-[150px] lg:h-[150px] object-cover object-top rounded-full"
             />
             <div>
-              <p className="text-xl sm:text-2xl xl:text-3xl xl:mb-[8px] font-bold mt-[5px] mb-[4px]">
+              <p className="text-xl sm:text-2xl xl:text-3xl xl:mb-[8px] font-bold mt-[5px] mb-[6px]">
                 Ivan Kovdryn
               </p>
               <p>English level: Pre-Intermediate</p>
@@ -75,41 +65,44 @@ export default function Home() {
               <p>22 y.o.</p>
             </div>
           </div>
-          <p className="text-md sm:text-lg self-center md:text-xl xl:text-2xl text-center font-bold text-blue-300">
+          <p className="text-md sm:text-lg bg-[#e6e6e6] py-2 px-10 rounded-md self-center md:text-xl xl:text-2xl text-center font-extrabold text-black">
             Full Stack (React, Node.js) developer
           </p>
           <div>
-            <div className={styles.title}>Project experience</div>
-            <span className={styles.line}></span>
+            <div className={styles.title}>Experience with some projects:</div>
             <div className="flex flex-col gap-[15px]">
               <div>
-                <p>&nbsp;-&nbsp; Corporate website with admin panel</p>
+                <p className="font-semibold">
+                  &nbsp;-&nbsp; Corporate website with admin panel
+                </p>
                 <Link
                   className="ml-[-2px] w-fit p-[2px] transition-all text-blue-200 hover:text-blue-400"
                   href="http://vanyaaa.cloud/"
                 >
                   http://vanyaaa.cloud/
                 </Link>
-                <p className="text-xs sm:text-sm">
+                <p className="text-[#e6e6e6]">
                   HTML5, CSS3, SASS/SCSS, JavaScript, EJS, Node.js, Express.js,
-                  Docker, MongoDB, Git...
+                  Docker, mongoose, MongoDB, Git...
                 </p>
               </div>
               <div>
-                <p>&nbsp;-&nbsp; Online shop</p>
+                <p className="font-semibold">
+                  &nbsp;-&nbsp; Online shop (without back-end & not adaptive)
+                </p>
                 <Link
                   className="ml-[-2px] w-fit p-[2px] transition-all text-blue-200 hover:text-blue-400"
                   href="https://nextjs-app-shop.vercel.app/"
                 >
                   https://nextjs-app-shop.vercel.app/
                 </Link>
-                <p className="text-sm">
+                <p className="text-[#e6e6e6]">
                   Next.js, React, CSS, SCSS, Tailwind CSS, Redux Toolkit, Axios,
                   Custom API, Git...
                 </p>
               </div>
               <div>
-                <p>
+                <p className="font-semibold">
                   &nbsp;-&nbsp; Other projects on React, Next.js, JavaScript
                 </p>
                 <Link
@@ -120,7 +113,9 @@ export default function Home() {
                 </Link>
               </div>
               <div>
-                <p>&nbsp;-&nbsp; Website layouts, also on GitHub</p>
+                <p className="font-semibold">
+                  &nbsp;-&nbsp; Website layouts, also on GitHub
+                </p>
                 <Link
                   className="ml-[-2px] w-fit p-[2px] transition-all text-blue-200 hover:text-blue-400"
                   href="https://github.com/IvanKovdryn?tab=repositories"
@@ -130,78 +125,53 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div>
-            <div className={styles.title}>Academic background</div>
-            <span className={styles.line}></span>
-            <div className="flex flex-col gap-[15px]">
-              <div>
-                <p>
-                  - I am studying for a master's degree at the Law Institute of
-                  Vasyl Stefanyk Precarpathian National University
-                </p>
-                <span className="text-gray-300">Ivano-Frankivsk</span>
-              </div>
-              <div>
-                <p>
-                  - Bachelor's degree at the Faculty of Physical Education and
-                  Sports Vasyl Stefanyk Precarpathian National University
-                </p>
-                <span className="text-gray-300">Ivano-Frankivsk</span>
-              </div>
-            </div>
-          </div>
         </div>
         <div
           className={`${styles.rightcol} flex flex-col justify-center min-h-[100vh] gap-[25px] sm:gap-[30px]`}
         >
           <div className={styles.skillswrapper}>
             <div className={styles.title}>Skills</div>
-            <span className={styles.line}></span>
             <ul>
               <li className={styles.skillsli}>
-                <span>-</span> &nbsp; React
-              </li>
-              <li className={styles.skillsli}>
-                <span>-</span> &nbsp; Next.js
+                <span>-</span> &nbsp; React, Next.js
               </li>
               <li className={styles.skillsli}>
                 <span>-</span> &nbsp; React Native, Expo
               </li>
               <li className={styles.skillsli}>
-                <span>-</span> &nbsp; JavaScript
-              </li>
-              <li className={styles.skillsli}>
-                <span>-</span> &nbsp; TypeScript
-              </li>
-              <li className={styles.skillsli}>
                 <span>-</span> &nbsp; Redux Toolkit
               </li>
               <li className={styles.skillsli}>
-                <span>-</span> &nbsp; Node.js
+                <span>-</span> &nbsp; JavaScript, TypeScript
               </li>
               <li className={styles.skillsli}>
-                <span>-</span> &nbsp; Express.js
-              </li>
-              <li className={styles.skillsli}>
-                <span>-</span> &nbsp; EJS
+                <span>-</span> &nbsp; HTML, CSS, SASS, Tailwind CSS
               </li>
               <li className={styles.skillsli}>
                 <span>-</span> &nbsp; Git
               </li>
               <li className={styles.skillsli}>
-                <span>-</span> &nbsp; MongoDB
-              </li>
-              <li className={styles.skillsli}>
                 <span>-</span> &nbsp; Docker
               </li>
               <li className={styles.skillsli}>
-                <span>-</span> &nbsp; HTML5, CSS3, SASS/SCSS, Tailwind CSS
+                <span>-</span> &nbsp; Postman
+              </li>
+              <li className={styles.skillsli}>
+                <span>-</span> &nbsp; Wordpress
+              </li>
+              <li className={styles.skillsli}>
+                <span>-</span> &nbsp; Node.js, Express.js, Nest.js
+              </li>
+              <li className={styles.skillsli}>
+                <span>-</span> &nbsp; Prisma, Mongoose
+              </li>
+              <li className={styles.skillsli}>
+                <span>-</span> &nbsp; MongoDB, PostgreSQL, MySQL
               </li>
             </ul>
           </div>
           <div className={styles.contactwrapper}>
             <div className={styles.title}>Contact info</div>
-            <span className={styles.line}></span>
             <ul className={`${styles.contactlist} flex flex-col`}>
               {contacts.map((contact) =>
                 contact.name === "+380 96 713 50 03" ? (
